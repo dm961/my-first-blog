@@ -1,22 +1,20 @@
 <html>
     <head>
         <title>My programming Blog!</title>
+<meta name="description" lang="ru" content="Небольшой блог о моих успехах">
+<meta name="description" lang="en" content="A little blog about my learning process">
+<meta name="keywords" lang="ru" content="Питон, самоучитель, блог, обучение">
+<meta name="keywords" lang="en" content="Python, learning, blog">
     </head>
     <body>
-        <div>
-            <h1><a href="/">My programming Blog!</a></h1>
-        </div>
-
-        <div>
-            <p>published: 25.02.2020, 12:19</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Today i'm using the HTML for the first time. Lets see what goes after that, right?</p>
-        </div>
-
-        <div>
-            <p>published: 25.02.2020, 12:20</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Well, i have just hosted the web-site on the <strong>pythonanywhere.com.</strong> Hopefully i will reach something greater in the nearest future!</p>
-        </div>
+        <div><h1>My programming Blog!</h1></div>
+        
+{% for post in posts %}
+    <div>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>published: {{ post.published_date }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
