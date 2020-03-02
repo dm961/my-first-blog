@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <title>My programming Blog!</title>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+<meta name="description" lang="ru" content="Небольшой блог о моих успехах">
+<meta name="description" lang="en" content="A little blog about my learning process">
+<meta name="keywords" lang="ru" content="Питон, самоучитель, блог, обучение">
+<meta name="keywords" lang="en" content="Python, learning, blog">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../static/css/blog.css">
+    </head>
+    <body>
+    <div class="page-header">
+        <h2><a href="/">My programming blog!</a></h2>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,20 +1,13 @@
-<html>
-    <head>
-        <title>My programming Blog!</title>
-<meta name="description" lang="ru" content="Небольшой блог о моих успехах">
-<meta name="description" lang="en" content="A little blog about my learning process">
-<meta name="keywords" lang="ru" content="Питон, самоучитель, блог, обучение">
-<meta name="keywords" lang="en" content="Python, learning, blog">
-    </head>
-    <body>
-        <div><h1>My programming Blog!</h1></div>
-        
-{% for post in posts %}
-    <div>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <p>published: {{ post.published_date }}</p>
-    </div>
-{% endfor %}
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <div class="date">
+                {{ post.created_date }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
